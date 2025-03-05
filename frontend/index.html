@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Dashboard for Behavior Analysis</title>
+    <link rel="stylesheet" href="db.css">
+    <style>
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <h2>Secure Dashboard</h2>
+            <ul>
+                <li onclick="showContent('home')">🏠 Home</li>
+                <li onclick="showContent('device-tracking')">📡 Device Tracking</li>
+                <li onclick="showContent('users')">👥 Users</li>
+                <li onclick="showContent('login-activity')">🔑 Login Activity</li>
+                <li onclick="showContent('security-alerts')">⚠️ Security Alerts</li>
+                <li onclick="showContent('reports')">📊 Reports</li>
+                <li onclick="showContent('login')">🔓 Login</li>
+                <li onclick="showContent('logout')">📕 Logout</li>
+            </ul>
+        </nav>
+        <main class="content">
+            <div id="home" class="section active"> 
+                <h1>Dashboard Overview</h1>
+                <p>Analyze user behavior to detect security threats and unusual activities.</p>
+            </div>
+            <div id="device-tracking" class="section">
+                <h1>Device Tracking</h1>
+                <p>Monitor connected devices, detect unauthorized logins, and analyze device usage patterns.</p>
+            </div>
+            <div id="users" class="section">
+                <h1>Users</h1>
+                <p>Track user roles, access levels, and behavioral patterns to detect anomalies.</p>
+            </div>
+            <div id="login-activity" class="section">
+                <h1>Login Activity</h1>
+                <p>Monitor login trends, failed attempts, and unusual access behaviors.</p>
+            </div>
+            <div id="security-alerts" class="section">
+                <h1>Security Alerts</h1>
+                <p>Receive real-time alerts for suspicious activities, unauthorized access, and security breaches.</p>
+            </div>
+            <div id="reports" class="section">
+                <h1>Reports</h1>
+                <p>Generate detailed reports on user behavior, security trends, and system vulnerabilities.</p>
+            </div>
+            <div id="login" class="section">
+                <h1>Login</h1>
+                <form>
+                    <input type="text" placeholder="Username" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+            <div id="logout" class="section">
+                <h1>Logging Out...</h1>
+                <p>You have been successfully logged out.</p>
+            </div>
+        </main>
+    </div>
+    <script>
+        function showContent(sectionId) {
+            let sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
